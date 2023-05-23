@@ -13,70 +13,60 @@ app.get("/Experiencia", function(req,res){
     var sql = "SELECT * FROM Experiencia"
     db.all(sql,[],(err,rows)=>{
         if(err){
-            throw err
+            console.log("Alogo esta errado!")
         }
         res.send(rows)
         console.log(rows)
     });
 });
 
-app.get('/Formaçao', (req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Acces-Control-Allow_Origin', '*');
-    var db = new sqlite3.Databas(DBPATH);
-    var sql = 'SELECT * FROM Formaçao ORDER BY ID COLLATE NOCASE';
-        db.all(sql, [], (err,rows) =>{
-            if (err) {
-                throw err;
-            }
-           res.json(rows)
-        });
-        db.close();
+app.get("/Formacao", function(req,res){
+    var sql = "SELECT * FROM Formacao"
+    db.all(sql,[],(err,rows)=>{
+        if(err){
+            console.log("Alogo esta errado!")
+        }
+        res.send(rows)
+        console.log(rows)
+    });
 });
 
-app.get('/Realizações', (req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Acces-Control-Allow_Origin', '*');
-    var db = new sqlite3.Databas(DBPATH);
-    var sql = 'SELECT * FROM Realizações ORDER BY ID COLLATE NOCASE';
-        db.all(sql, [], (err,rows) =>{
-            if (err) {
-                throw err;
-            }
-           res.json(rows)
-        });
-        db.close();
+app.get("/Realizacao", function(req,res){
+    var sql = "SELECT * FROM Realizacao"
+    db.all(sql,[],(err,rows)=>{
+        if(err){
+            console.log("Alogo esta errado!")
+        }
+        res.send(rows)
+        console.log(rows)
+    });
 });
 
-app.get('/user', (req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Acces-Control-Allow_Origin', '*');
-    var db = new sqlite3.Databas(DBPATH);
-    var sql = 'SELECT * FROM user ORDER BY ID COLLATE NOCASE';
-        db.all(sql, [], (err,rows) =>{
-            if (err) {
-                throw err;
-            }
-           res.json(rows)
-        });
-        db.close();
+app.get("/user", function(req,res){
+    var sql = "SELECT * FROM user"
+    db.all(sql,[],(err,rows)=>{
+        if(err){
+            console.log("Alogo esta errado!")
+        }
+        res.send(rows)
+        console.log(rows)
+    });
 });
 
-app.get('/Sobre_mim', (req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Acces-Control-Allow_Origin', '*');
-    var db = new sqlite3.Databas(DBPATH);
-    var sql = 'SELECT * FROM Sobre mim ORDER BY ID COLLATE NOCASE';
-        db.all(sql, [], (err,rows) =>{
-            if (err) {
-                throw err;
-            }
-           res.json(rows)
-        });
-        db.close();
+app.get("/Sobremim", function(req,res){
+    var sql = "SELECT * FROM Sobremim"
+    db.all(sql,[],(err,rows)=>{
+        if(err){
+            console.log("Alogo esta errado!")
+        }
+        res.send(rows)
+        console.log(rows)
+    });
 });
+
 //Formação, Realizações Sobre mim
 app.listen(port, () =>
 {
     console.log(`Servidor rodando na porta ${port}`);
 })
+
