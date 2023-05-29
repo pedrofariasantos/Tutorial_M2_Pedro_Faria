@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Pedro Faria/OneDrive/Documentos/GitHub/Tutorial_M2_Pedro_Faria/SEMANA_02/02_AUT_EST_ENTREGA/awsd.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1870"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,11:mainExperiencia"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE user ( 
+	&quot;user key&quot;           INTEGER NOT NULL  PRIMARY KEY  ,
+	Nome                 TEXT     
+ );
+
+CREATE TABLE Experiencia ( 
+	&quot;User key&quot;           INTEGER     ,
+	Empresa              TEXT     ,
+	Cargo                TEXT     ,
+	Data                 TEXT     ,
+	FOREIGN KEY ( &quot;User key&quot; ) REFERENCES user( &quot;user key&quot; )  
+ );
+
+CREATE TABLE Formaçao ( 
+	&quot;user key&quot;           INTEGER     ,
+	Curso                TEXT     ,
+	Data                 TEXT     ,
+	FOREIGN KEY ( &quot;user key&quot; ) REFERENCES user( &quot;user key&quot; )  
+ );
+
+CREATE TABLE Realizações ( 
+	&quot;user key&quot;           INTEGER     ,
+	Realizações          TEXT     ,
+	&quot;Data:&quot;              TEXT     ,
+	FOREIGN KEY ( &quot;user key&quot; ) REFERENCES user( &quot;user key&quot; )  
+ );
+
+CREATE TABLE &quot;Sobre mim&quot; ( 
+	Número               NUMERIC     ,
+	User_key             BIGINT     ,
+	email                CHAR(20)     ,
+	endereço             CHAR(20)     ,
+	FOREIGN KEY ( User_key ) REFERENCES user( &quot;user key&quot; )  
+ );</sql><current_tab id="0"/></tab_sql></sqlb_project>
